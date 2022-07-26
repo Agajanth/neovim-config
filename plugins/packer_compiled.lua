@@ -109,8 +109,8 @@ if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
       load_after = {
         ["nvim-cmp"] = true
       },
-      loaded = false,
-      needs_bufread = false,
+      loaded = true,
+      needs_bufread = true,
       path = "/Users/disaza/.local/share/nvim/site/pack/packer/opt/cmp-buffer",
       url = "https://github.com/hrsh7th/cmp-buffer"
     },
@@ -119,8 +119,8 @@ if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
       load_after = {
         ["nvim-cmp"] = true
       },
-      loaded = false,
-      needs_bufread = false,
+      loaded = true,
+      needs_bufread = far lse,
       path = "/Users/disaza/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lsp",
       url = "https://github.com/hrsh7th/cmp-nvim-lsp"
     },
