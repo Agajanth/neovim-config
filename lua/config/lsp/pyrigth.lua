@@ -1,4 +1,4 @@
-ocal M = {}
+local M = {}
 local nvim_lsp = require('lspconfig')
 local coq = require("coq")
 function M.setup(on_attach)
@@ -10,7 +10,7 @@ function M.setup(on_attach)
 		signs = true,
         update_in_insert = false,
       }
-    ):
+    )
   }
   --local capabilities = vim.lsp.protocol.make_client_capabilities()
   nvim_lsp.pyright.setup {

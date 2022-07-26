@@ -3,6 +3,7 @@ local set = vim.opt
 set.expandtab = true
 set.smartindent = true
 set.tabstop = 4
+
 set.softtabstop = 4
 set.shiftwidth = 2
 set.relativenumber = true
@@ -38,4 +39,4 @@ set.foldenable = false
 set.foldlevel = 2
 
 -- Set tokyonight background
-vim.g.tokyonight_style = "night"
+--vim.g.tokyonight_style = "night"
