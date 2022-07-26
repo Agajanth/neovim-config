@@ -1,6 +1,6 @@
 ocal M = {}
 local nvim_lsp = require('lspconfig')
-
+local coq = require("coq")
 function M.setup(on_attach)
   local handlers = {
     ["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -10,9 +10,9 @@ function M.setup(on_attach)
 		signs = true,
         update_in_insert = false,
       }
-    )
+    ):
   }
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  --local capabilities = vim.lsp.protocol.make_client_capabilities()
   nvim_lsp.pyright.setup {
     cmd = { 
         "pyright-langserver", 
@@ -25,7 +25,13 @@ function M.setup(on_attach)
     },
     on_attach = on_attach,
     root_dir = nvim_lsp.util.root_pattern("Gemfile", ".git", ".toml","venv", "requirements.txt"),
-    capabilities = capabilities,
+    capabilities = coq.lsp_ensure_capabilities(
+      vim.tbl_deep_extend("force", {
+      on_attach = lsp_on_attach,
+      capabilities = capabilities,
+      flags = {debounce_text_changes = 150},
+      init_options = config
+      }, {})),
     handlers = handlers,
     settings = {
       python = {

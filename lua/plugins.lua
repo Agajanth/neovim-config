@@ -4,7 +4,21 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
+  use({
+    "themercorp/themer.lua",
+    config = function()
+    require("themer").setup({
+        colorscheme = "dracula",
+        styles = {
+            ["function"] = { style = 'italic' },
+             functionbuiltin = { style = 'italic' },
+             variable = { style = 'italic' },
+              variableBuiltIn = { style = 'italic' },
+            parameter  = { style = 'italic' },
+        },
+    })
+    end
+})
   -- General
   use 'jiangmiao/auto-pairs'
   use {
@@ -74,39 +88,45 @@ return require('packer').startup(function(use)
       "williamboman/nvim-lsp-installer",
     },
   }
-
+  
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
 
   use { 'tami5/lspsaga.nvim' }
-
   use {
-    "hrsh7th/nvim-cmp",
-    
-    config = function()
-      require("config.cmp").setup()
-    end,
-    wants = { "LuaSnip" },
-    requires = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lua",
-      "ray-x/cmp-treesitter",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lsp",
-      {
-        "L3MON4D3/LuaSnip",
-        wants = "friendly-snippets",
-        config = function()
-          require("config.luasnip").setup()
-        end,
-      },
-      "rafamadriz/friendly-snippets",
-    },
-    disable = false,
+    'ms-jpq/coq_nvim',
+    branch = 'coq',
+    event = "VimEnter",
+    config = 'vim.cmd[[COQnow]]'
   }
+use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+  -- u/cmp-path",
+  --     "hrsh7th/cmp-nvim-lua",
+  --     "ray-x/cmp-treesitter",
+  --     "saadparwaiz1/cmp_luasnip",
+  --     "hrsh7th/cmp-nvim-lsp",
+  --     {
+  --       "L3MON4D3/LuaSnip",
+  --       wants = "friendly-snippets",
+  --       config = function()
+  --         require(se {
+  --   "hrsh7th/nvim-cmp",
+    
+  --   config = function()
+  --     require("config.cmp").setup()
+  --   end,
+  --   wants = { "LuaSnip" },
+  --   requires = {
+  --     "hrsh7th/cmp-buffer",
+  --     "hrsh7th"config.luasnip").setup()
+  --       end,
+  --     },
+  --     "rafamadriz/friendly-snippets",
+  --   },
+  --   disable = false,
+  -- }
 
   use 'folke/which-key.nvim'
   use 'ludovicchabant/vim-gutentags'

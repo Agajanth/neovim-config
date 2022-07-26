@@ -267,10 +267,15 @@ if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
       path = "/Users/disaza/.local/share/nvim/site/pack/packer/start/telescope.nvim",
       url = "https://github.com/nvim-telescope/telescope.nvim"
     },
-    ["tokyonight.nvim"] = {
+    -- ["tokyonight.nvim"] = {
+    --   loaded = true,
+    --   path = "/Users/disaza/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    --   url = "https://github.com/folke/tokyonight.nvim"
+    -- },
+    ["themer"]={ 
       loaded = true,
-      path = "/Users/disaza/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-      url = "https://github.com/folke/tokyonight.nvim"
+      url = "https://github.com/ThemerCorp/themer.lua.git",
+      path = "/Users/disaza/.local/share/nvim/site/pack/packer/start/themer.lua"
     },
     ["trouble.nvim"] = {
       loaded = true,

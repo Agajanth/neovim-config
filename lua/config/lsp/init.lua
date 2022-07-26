@@ -53,7 +53,7 @@ end
 function M.setup()
   require("config.lsp.installer").setup(servers, getOptions())
   require("config.lsp.solargraph").setup(on_attach)
-  require("config.lsp.pyright").setup(on_attach)
+  require("config.lsp.pyrigth").setup(on_attach)
 end
 
 return M
