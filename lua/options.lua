@@ -38,5 +38,7 @@ set.foldnestmax = 10
 set.foldenable = false
 set.foldlevel = 2
 
+--- remove whitespace on save
+vim.cmd [[au BufWritePre * :%s/\s\+$//e]]
 -- Set tokyonight background
 --vim.g.tokyonight_style = "night"
