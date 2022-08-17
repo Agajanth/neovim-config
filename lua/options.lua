@@ -31,7 +31,12 @@ set.writebackup = false
 set.updatetime = 1000 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 set.cursorline = true
 set.shortmess = set.shortmess + 'c'
-
+set.cursorline = true
+set.termguicolors = true
+set.winblend = 0
+set.wildoptions = 'pum'
+set.pumblend = 5
+set.background = 'dark'
 -- Folding
 set.foldmethod = 'indent'
 set.foldnestmax = 10

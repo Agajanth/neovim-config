@@ -21,19 +21,18 @@ function M.setup(on_attach)
       }
     )
   }
-  nvim_lsp.solargraph.setup {
+  nvim_lsp.rust_analyzer.setup {
     cmd = {
-      "solargraph",
-      "stdio"
+      "rust-analyzer"
     },
     filetypes = {
-      "ruby"
+      "rust"
     },
     flags = {
       debounce_text_changes = 150
     },
     on_attach = on_attach,
-    root_dir = nvim_lsp.util.root_pattern("Gemfile", ".git", "."),
+    root_dir = nvim_lsp.util.root_pattern("Cargo.toml", "rust-project.json"),
     capabilities = cmp_capabilities,
     handlers = handlers,
     settings = {

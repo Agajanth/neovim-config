@@ -8,6 +8,7 @@ local servers = {
   tsserver = {},
   vimls = {},
   solargraph = {},
+  rust_analyzer = {},
 }
 
 local function on_attach(client, bufnr)
@@ -54,6 +55,7 @@ function M.setup()
   require("config.lsp.installer").setup(servers, getOptions())
   require("config.lsp.solargraph").setup(on_attach)
   require("config.lsp.pyrigth").setup(on_attach)
+  require("config.lsp.rust_analyzer").setup(on_attach)
 end
 
 return M

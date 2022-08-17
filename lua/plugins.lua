@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
     end
 })
   -- General
-  use 'jiangmiao/auto-pairs'
   use {
       'numToStr/Comment.nvim',
       config = function()
@@ -36,12 +35,6 @@ return require('packer').startup(function(use)
     }
   use 'ThePrimeagen/harpoon'
   use 'tpope/vim-surround'
-
-  -- Colors
-  use {
-      'folke/tokyonight.nvim',
-      branch = 'main'
-  }
 
   -- Git
   use 'cohama/agit.vim'
@@ -60,7 +53,6 @@ return require('packer').startup(function(use)
   use 'neoclide/vim-jsx-improve'
   use 'vim-test/vim-test'
   use 'voldikss/vim-floaterm'
-  use 'tpope/vim-rails'
 
   -- Gist vim
   use 'mattn/vim-gist'
@@ -88,50 +80,33 @@ return require('packer').startup(function(use)
       "williamboman/nvim-lsp-installer",
     },
   }
-  
+  use 'akinsho/nvim-bufferline.lua' --bufferline
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
 
-  use { 'tami5/lspsaga.nvim' }
-  use {
-    'ms-jpq/coq_nvim',
-    branch = 'coq',
-    event = "VimEnter",
-    config = 'vim.cmd[[COQnow]]'
-  }
-use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
-  -- u/cmp-path",
-  --     "hrsh7th/cmp-nvim-lua",
-  --     "ray-x/cmp-treesitter",
-  --     "saadparwaiz1/cmp_luasnip",
-  --     "hrsh7th/cmp-nvim-lsp",
-  --     {
-  --       "L3MON4D3/LuaSnip",
-  --       wants = "friendly-snippets",
-  --       config = function()
-  --         require(se {
-  --   "hrsh7th/nvim-cmp",
-    
-  --   config = function()
-  --     require("config.cmp").setup()
-  --   end,
-  --   wants = { "LuaSnip" },
-  --   requires = {
-  --     "hrsh7th/cmp-buffer",
-  --     "hrsh7th"config.luasnip").setup()
-  --       end,
-  --     },
-  --     "rafamadriz/friendly-snippets",
-  --   },
-  --   disable = false,
-  -- }
+  use 'onsails/lspkind-nvim' -- vscode-like pictograms
+  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/nvim-cmp' -- Completion
+  use 'neovim/nvim-lspconfig' -- LSP
+  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
+  use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use 'L3MON4D3/LuaSnip'
+
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
 
   use 'folke/which-key.nvim'
-  use 'ludovicchabant/vim-gutentags'
-  use {
-      'folke/trouble.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons' },
-  }
+  use  'kyazdani42/nvim-web-devicons' --file icons
+  --use {
+  --    'folke/trouble.nvim',
+  --    requires = { 'kyazdani42/nvim-web-devicons' },
+  --}
 end)

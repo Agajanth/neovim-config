@@ -1,7 +1,16 @@
 local M = {}
 local nvim_lsp = require('lspconfig')
-local coq = require("coq")
 function M.setup(on_attach)
+
+local cmp_capabilities = require('cmp_nvim_lsp').update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
+
+nvim_lsp.flow.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
   local handlers = {
     ["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -14,8 +23,8 @@ function M.setup(on_attach)
   }
   --local capabilities = vim.lsp.protocol.make_client_capabilities()
   nvim_lsp.pyright.setup {
-    cmd = { 
-        "pyright-langserver", 
+    cmd = {
+        "pyright-langserver",
         "--stdio" },
     filetypes = {
       "python"
@@ -25,13 +34,7 @@ function M.setup(on_attach)
     },
     on_attach = on_attach,
     root_dir = nvim_lsp.util.root_pattern("Gemfile", ".git", ".toml","venv", "requirements.txt"),
-    capabilities = coq.lsp_ensure_capabilities(
-      vim.tbl_deep_extend("force", {
-      on_attach = lsp_on_attach,
-      capabilities = capabilities,
-      flags = {debounce_text_changes = 150},
-      init_options = config
-      }, {})),
+    capabilities = cmp_capabilities,
     handlers = handlers,
     settings = {
       python = {
