@@ -15,3 +15,4 @@ prettier.setup {
     "scss",
     "lua"
   }
+}

@@ -68,16 +68,8 @@ local keymap_h = {
 }
 whichkey.register(keymap_h, { prefix = "<leader>", noremap = true })
 
--- RoR
-local keymap_r = {
-  r = {
-    name = "Rails",
-    c = { "<cmd>:Econtroller<CR>", "Rails Controller" },
-    m = { "<cmd>:Emodel<CR>", "Rails Model" },
-    v = { "<cmd>:Eview<CR>", "Rails View" },
-  }
-}
-whichkey.register(keymap_r, { prefix = "<leader>", noremap = true })
+-- Python
+
 
 -- Use ctrl-[hjkl] to select the active split!
 map("n", "<c-k>", ":wincmd k<CR>", {silent = true})

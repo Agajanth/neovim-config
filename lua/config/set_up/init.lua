@@ -9,4 +9,7 @@ require('config.set_up.lualine')
 require('config.set_up.cmp')
 require('config.set_up.lspkind')
 require('config.set_up.webdevicons')
-
+require('config.set_up.prettier')
+require('config.set_up.bufferline' )
+require('config.set_up.lsp-saga')
+require('config.set_up.autopairs')

@@ -17,7 +17,7 @@ nvim_lsp.flow.setup {
         virtual_text = false,
 		underline = true,
 		signs = true,
-        update_in_insert = false,
+        update_in_insert = true,
       }
     )
   }
@@ -33,7 +33,7 @@ nvim_lsp.flow.setup {
       debounce_text_changes = 150
     },
     on_attach = on_attach,
-    root_dir = nvim_lsp.util.root_pattern("Gemfile", ".git", ".toml","venv", "requirements.txt"),
+    root_dir = nvim_lsp.util.root_pattern(".py", "__init__.py", ".git", ".toml","venv", "requirements.txt"),
     capabilities = cmp_capabilities,
     handlers = handlers,
     settings = {
